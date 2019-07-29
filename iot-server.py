@@ -13,17 +13,18 @@ class store(Resource):
         id = dict_dat["id"]
         name = dict_dat["name"]
         date = datetime.date.today().strftime("%Y-%m-%d")
+        key = dict_dat["key"]
         database = sqlite3.connect("data.db")
         cursor = database.cursor()
         command = '''
-        INSERT INTO DATA (`ID`,`NAME`,`UPLOAD_DATE`) VALUES ({},"{}","{}")
-        '''.format(id,name,date)
+        INSERT INTO DATA (`ID`,`NAME`,`ID_KEY`,`UPLOAD_DATE`) VALUES ({},"{}","{}","{}")
+        '''.format(id,name,key,date)
         cursor.execute(command)
         database.commit()
         database.close()
         return dict_dat,200
 
-api.add_resource(store,"/")
+api.add_resource(store,"/store/")
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0",port="5000",debug=True)
