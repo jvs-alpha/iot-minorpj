@@ -1,7 +1,13 @@
 # IOT,SDN,CLOUD
 
+## LANGUAGE USED
+* python 3
+* linux base system
+
 ## TO STUDY
-* software defined network (SDN)
+* OpenStack - for making the SDN
+* Open vSwitch (OVS) - for creating the multilayer switch
 * cloudlet
-* replace azure by openstack on raspberry pi
-* 
+
+## THINGS TO DO
+* replace the azure with OpenStack
