@@ -36,3 +36,5 @@ api.add_resource(work,"/work/")
 
 if(__name__ == "__main__"):
     app.run("0.0.0.0","5000",debug=True)
+
+# curl -d '{"key":"True"}' -H "Content-Type: application/json" -X POST http://localhost:5000
