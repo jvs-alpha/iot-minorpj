@@ -10,4 +10,9 @@
 * jwt token based authentication unsing python jwt
 
 ## THINGS TO DO
-* replace the azure with OpenStack
+* use the OpenStack in any vertual mechine
+* create a decentalized network for the iot device to communicate
+
+## TERMS TO USE
+* Real time flow
+* Batch flow (it is stored data)
