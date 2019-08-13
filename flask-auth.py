@@ -1,5 +1,6 @@
 from flask import Flask,request,jsonify,make_response
 from flask_restful import Api,Resource
+import jwt
 
 app = Flask(__name__)
 api = Api(app)
@@ -7,7 +8,8 @@ api = Api(app)
 class auth(Resource):
     def get(self):
         if request.authorization and request.authorization.username == "jvs" and request.authorization.password == "ggsafehouse":
-            return make_response("welcome",200)
+            encoded = jwt.encode({"user":request.authorization.username},"thisisshit",algorithm="HS256")
+            return encoded.decode("UTF-8"),200
         else:
             return make_response("you are dead",200)
 
