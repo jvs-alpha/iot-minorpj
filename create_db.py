@@ -1,13 +1,13 @@
-import sqlite3
+from flask_sqlalchemy import SQLAlchemy
+from flask import Flask,request
+import datetime
+app = Flask(__name__)
 
-database = sqlite3.connect("data.db")
-cursor = database.cursor()
-command = '''
-CREATE TABLE DATA( ID INT NOT NULL PRIMARY KEY,
-NAME VARCHAR(20) NOT NULL,
-ID_KEY VARCHAR(100) NOT NULL,
-UPLOAD_DATE DATE);
-'''
-cursor.execute(command)
-database.commit()
-database.close()
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///dat.db"
+db = SQLAlchemy(app)
+
+class node(db.Model):
+    id = db.Column(db.Integer,primary_key=True)
+    nodename = db.Column(db.String(20),unique=True,nullable=False)
+    encode_jwt = db.Column(db.String(200),unique=True,nullable=False)
+    updated_time = db.Coumn(db.DateTime,nullable=True,default=datetime.datetime.utcnow())
