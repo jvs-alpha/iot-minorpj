@@ -11,6 +11,7 @@
 * werkzeug.security - this is for hashing the password
 * jwt - for generating the token
 * datetime - for genrating datetime
+* sqlite3 and sqlalchemy - for maintaining the db
 
 ## TO STUDY
 * OpenStack - for making the SDN
