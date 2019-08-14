@@ -25,3 +25,11 @@
 ## TERMS TO USE
 * Real time flow
 * Batch flow (it is stored data)
+
+## IOT DEVICE FUCTIONALITY
+* Device registration
+* Device authentication/authorization
+* Device configuration
+* Device provisioning
+* Device monitoring and diagnostics
+* Device troubleshooting
