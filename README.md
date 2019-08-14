@@ -3,7 +3,14 @@
 ## LANGUAGE USED
 * python 3
 * linux base system
-*
+
+## MODULES NEEDED
+* flask - for making the flask app
+* flask_restful(optional) - if want to make it restful use this
+* uuid - this is for generating uuid
+* werkzeug.security - this is for hashing the password
+* jwt - for generating the token
+* datetime - for genrating datetime
 
 ## TO STUDY
 * OpenStack - for making the SDN
