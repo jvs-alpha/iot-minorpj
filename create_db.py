@@ -17,3 +17,5 @@ class node(db.Model):
 # db.create_all() for creating the database
 # then we need to import the node class to put the data in the as varialbe
 # then add and commit the data to the database
+# commands for add - db.session.add(var_name)
+# commads for commit - db.session.commit()
