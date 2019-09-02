@@ -15,18 +15,19 @@
 * jwt - for generating the token
 * datetime - for genrating datetime
 * sqlite3 and sqlalchemy - for maintaining the db
-* kafka-python - for processing streaming data
+* kafka server - this will be running in the background
+* kafka-python - to interact with the kafka server running
 
 ## TO STUDY
+* kafka linux server
 * kafka-python
 * Open vSwitch (OVS) - for making a switch in linux mechine (no sure if needed)
 * jwt token based authentication unsing python jwt
 * flask_sqlalchemy for the database
 
 ## THINGS TO DO
-* create a decentalized network for the iot device to communicate
 * authenticate the iot device with the jwt api
-* make the iot device to stream the live data to the kafka api
+* make the iot device to stream the live data to the kafka server using python api
 
 
 ## TERMS TO USE
