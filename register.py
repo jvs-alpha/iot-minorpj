@@ -44,4 +44,4 @@ def create_user():
 if __name__ == "__main__":
     app.run(debug=True,host="0.0.0.0",port="3000")
 
-#curl -d '{"key1":"value1", "key2":"value2"}' -H "Content-Type: application/json" -X POST http://localhost:5000
+#curl -d '{"nodename":"test3", "jwt":"pwoeirpiweproipwoeirpfdfdoiwper","admin":"False"}' -H "Content-Type: application/json" -X POST http://localhost:3000/user
