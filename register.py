@@ -10,7 +10,8 @@ inside_data = []
 @app.route("/user",methods=["GET"])
 def get_all_data():
     inside_data = read_db()
-    return jsonify(inside_data)
+    print(inside_data)
+    return "good"
 
 #@app.route("/user",methods=["POST"])
 #def create_user():
