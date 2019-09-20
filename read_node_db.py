@@ -1,6 +1,6 @@
 import sqlite3
 
-def read_db():
+def read_node_db():
     database = sqlite3.connect("dat.db")
     cursor = database.cursor()
     data = cursor.execute("SELECT * FROM node")
@@ -9,4 +9,4 @@ def read_db():
     return out_data
 
 if __name__ == "__main__":
-    print(read_db())
+    print(read_node_db())

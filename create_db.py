@@ -12,7 +12,6 @@ class node(db.Model):
     pub_id = db.Column(db.String(40),unique=True,nullable=False)
     nodename = db.Column(db.String(20),unique=True,nullable=False)
     encode_jwt = db.Column(db.String(200),unique=True,nullable=False)
-    admin = db.Column(db.Boolean,nullable=False)
     updated_time = db.Column(db.DateTime,nullable=True,default=datetime.datetime.utcnow())
 
     def __rep__(self):
