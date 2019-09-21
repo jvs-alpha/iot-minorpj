@@ -28,7 +28,7 @@ def get_all_data():
 @app.route("/user",methods=["POST"])
 def create_user():
     token_list = read_user_db()
-    token = token_list[0][0]
+    token = token_list[-1][0]
     if request.headers["Cookie"] == token:
         data = request.get_json()
         inside_data = read_node_db()
