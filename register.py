@@ -2,6 +2,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask import Flask,request,jsonify
 from read_node_db import *
 from read_user_db import *
+import jwt
 import datetime
 import uuid
 
@@ -34,7 +35,9 @@ def create_user():
         inside_data = read_node_db()
         pre_id = inside_data[-1][0]
         id = pre_id + 1
-        new_node = node(id=id,pub_id=str(uuid.uuid4()),nodename=data["nodename"],encode_jwt=data["jwt"])
+        encoded = jwt.encode({"user":data["nodename"],"exp":datetime.datetime.utcnow()+datetime.timedelta(minutes=30)},"jvs",algorithm="HS256")
+        encode_jwt = encoded.decode("UTF-8")
+        new_node = node(id=id,pub_id=str(uuid.uuid4()),nodename=data["nodename"],encode_jwt=encode_jwt)
         db.session.add(new_node)
         db.session.commit()
         return "user created",200

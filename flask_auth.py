@@ -17,7 +17,7 @@ class user(db.Model):
 @app.route("/login",methods=["GET"])
 def login():
     if request.authorization and request.authorization.username == "jvs" and request.authorization.password == "ggsafehouse":
-        encoded = jwt.encode({"user":request.authorization.username,"exp":datetime.datetime.utcnow()+datetime.timedelta(minutes=30)},"thisisshit",algorithm="HS256")
+        encoded = jwt.encode({"user":request.authorization.username,"exp":datetime.datetime.utcnow()+datetime.timedelta(minutes=30)},"jvs",algorithm="HS256")
         token = encoded.decode("UTF-8")
         dat = user(encode_jwt=token)
         db.session.add(dat)

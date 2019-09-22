@@ -1,2 +1,2 @@
-from flask_auth2 import *
+from flask_auth import *
 db.create_all()
