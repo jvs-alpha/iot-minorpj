@@ -16,6 +16,7 @@ class node(db.Model):
     pub_id = db.Column(db.String(40),unique=True,nullable=False)
     nodename = db.Column(db.String(20),unique=True,nullable=False)
     encode_jwt = db.Column(db.String(200),unique=True,nullable=False)
+    ip = db.Column(db.String(20),unique=True,nullable=False)
     updated_time = db.Column(db.DateTime,nullable=True,default=datetime.datetime.utcnow())
 
     def __rep__(self):
@@ -37,10 +38,11 @@ def create_user():
         id = pre_id + 1
         encoded = jwt.encode({"user":data["nodename"],"exp":datetime.datetime.utcnow()+datetime.timedelta(minutes=30)},"jvs",algorithm="HS256")
         encode_jwt = encoded.decode("UTF-8")
-        new_node = node(id=id,pub_id=str(uuid.uuid4()),nodename=data["nodename"],encode_jwt=encode_jwt)
+        uid = str(uuid.uuid4())
+        new_node = node(id=id,pub_id=uid,nodename=data["nodename"],encode_jwt=encode_jwt,ip=data["ip"])
         db.session.add(new_node)
         db.session.commit()
-        return "user created",200
+        return {"id":uid},200
     else:
         return "not created",200
 
@@ -48,4 +50,4 @@ def create_user():
 if __name__ == "__main__":
     app.run(debug=True,host="0.0.0.0",port="3000")
 
-#curl -d '{"nodename":"test3", "jwt":"pwoeirpiweproipwoeirpfdfdoiwper"}' -H "Content-Type: application/json" -X POST http://localhost:3000/user
+#curl -d '{"nodename":"test3", "ip":"192.168.1.55"}' -H "Content-Type: application/json" -X POST http://localhost:3000/user
