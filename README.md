@@ -26,8 +26,7 @@
 * flask_sqlalchemy for the database
 
 ## THINGS TO DO
-* authenticate the iot device with the jwt api
-* make the iot device to stream the live data to the kafka server using python api
+* make search_node_db work
 
 
 ## TERMS TO USE

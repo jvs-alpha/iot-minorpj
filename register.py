@@ -12,8 +12,8 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///dat.db"
 db = SQLAlchemy(app)
 
 class node(db.Model):
-    id = db.Column(db.Integer,primary_key=True,unique=True,nullable=False)
-    pub_id = db.Column(db.String(40),unique=True,nullable=False)
+    id = db.Column(db.Integer,unique=True,nullable=False)
+    pub_id = db.Column(db.String(40),primary_key=True,unique=True,nullable=False)
     nodename = db.Column(db.String(20),unique=True,nullable=False)
     encode_jwt = db.Column(db.String(200),unique=True,nullable=False)
     ip = db.Column(db.String(20),unique=True,nullable=False)
@@ -42,7 +42,7 @@ def create_user():
         new_node = node(id=id,pub_id=uid,nodename=data["nodename"],encode_jwt=encode_jwt,ip=data["ip"])
         db.session.add(new_node)
         db.session.commit()
-        return {"id":uid},200
+        return uid,200
     else:
         return "not created",200
 
