@@ -9,4 +9,6 @@ def read_user_db():
     return out_data
 
 if __name__ == "__main__":
-    print(read_user_db())
+    list_data = read_user_db()
+    for i in list_data:
+        print(i)

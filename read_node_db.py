@@ -9,4 +9,6 @@ def read_node_db():
     return out_data
 
 if __name__ == "__main__":
-    print(read_node_db())
+    list_data = read_node_db()
+    for i in list_data:
+        print(i)
