@@ -36,7 +36,7 @@ def create_user():
         inside_data = read_node_db()
         pre_id = inside_data[-1][0]
         id = pre_id + 1
-        encoded = jwt.encode({"user":data["nodename"],"exp":datetime.datetime.utcnow()+datetime.timedelta(minutes=30)},"jvs",algorithm="HS256")
+        encoded = jwt.encode({"user":data["nodename"],"exp":datetime.datetime.utcnow()},"jvs",algorithm="HS256")
         encode_jwt = encoded.decode("UTF-8")
         uid = str(uuid.uuid4())
         new_node = node(id=id,pub_id=uid,nodename=data["nodename"],encode_jwt=encode_jwt,ip=data["ip"])
