@@ -26,8 +26,12 @@
 * flask_sqlalchemy for the database
 
 ## THINGS TO DO
-* make search_node_db work
 
+## THE DEFAULT PORT
+* register 3000
+* flask_auth 3001
+* flask_search 3002
+* flask_node_read 3003
 
 ## TERMS TO USE
 * Real time flow
