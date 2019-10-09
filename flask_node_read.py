@@ -1,4 +1,4 @@
-from flask import Flask,request
+import requests
 import sqlite3
 
 
@@ -10,13 +10,19 @@ def search_by_id(id):
     database.close()
     return data
 
-app = Flask(__name__)
-
-@app.route("/",methods=["GET"])
-def index():
-    dat = request.headers["id"]
-    data = search_by_id(int(dat))
-    return {"data":data[0]},200
+def send_data(data):
+    data = data[0]
+    id = data[0]
+    pub_id = data[1]
+    nodename = data[2]
+    encode_jwt = data[3]
+    ip = data[4]
+    updated_time = data[5]
+    requests.post(
+    f"http://127.0.0.1:3003/", # chage the 127.0.0.1 to {ip}
+    data={"id":int(id),"pub_id":pub_id,"nodename":nodename,"encode_jwt":encode_jwt,"ip":ip,"updated_time":updated_time}
+    )
 
 if __name__ == "__main__":
-    app.run(debug=True,host="0.0.0.0",port="3003")
+    data = search_by_id(1)
+    send_data(data)
