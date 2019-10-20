@@ -25,8 +25,6 @@
 * jwt token based authentication unsing python jwt
 * flask_sqlalchemy for the database
 
-## THINGS TO DO
-
 ## THE DEFAULT PORT
 * register 3000
 * flask_auth 3001
