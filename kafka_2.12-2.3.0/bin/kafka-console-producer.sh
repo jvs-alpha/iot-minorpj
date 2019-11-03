@@ -18,3 +18,8 @@ if [ "x$KAFKA_HEAP_OPTS" = "x" ]; then
     export KAFKA_HEAP_OPTS="-Xmx512M"
 fi
 exec $(dirname $0)/kafka-run-class.sh kafka.tools.ConsoleProducer "$@"
+ * Serving Flask app "register" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on

@@ -1,0 +1,4 @@
+kafka_2.12-2.3.0/logs/
+logs/
+site-docs/site-docs/
+bin/kafka-console-producer.sh

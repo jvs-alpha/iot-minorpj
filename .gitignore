@@ -2,3 +2,4 @@ __pycache__
 dat.db
 dat2.db
 test.py
+kafka_2.12-2.3.0/bin/kafka-console-producer.sh
