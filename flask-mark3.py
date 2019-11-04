@@ -4,6 +4,7 @@ from flask_restful import Resource,Api
 from controls import *
 import socket
 import os
+import sys
 
 app = Flask(__name__)
 api = Api(app)
@@ -11,6 +12,8 @@ api = Api(app)
 class work(Resource):
     def get(self):
         key = os.environ["TOKEN"]
+        print(key)
+        sys.exit()
         # Key to check with
         check_key = request.args.get("key") # Gets the key from user
         if(check_key == key):   # If the key matches proceed
