@@ -38,7 +38,7 @@ class basic(Resource):  # This class is just for fun
         return "GGSafeHouse",200    # This will return the name GGSafeHouse
 
 api.add_resource(basic,"/")
-api.add_resource(work,"/work/")
+api.add_resource(work,"/work")
 
 if(__name__ == "__main__"):
     app.run("0.0.0.0","5000",debug=True)
