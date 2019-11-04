@@ -27,6 +27,12 @@ class work(Resource):
         else:
             return "key not found",401
 
+    def post(self):
+        data = request.get_json()
+        print(data["token"])
+        os.environ["TOKEN"] = str(data["token"])
+        return "environment set",200
+
 class basic(Resource):  # This class is just for fun
     def get(self):
         return "GGSafeHouse",200    # This will return the name GGSafeHouse
