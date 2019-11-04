@@ -6,6 +6,7 @@ app = Flask(__name__)
 def get_environ():
     data = request.get_json()
     print(data)
+    return "environment set",200
 
 
 if __name__ == "__main__":
