@@ -10,7 +10,7 @@ api = Api(app)
 
 class work(Resource):
     def get(self):
-        key = "qxZVfGaLXvOaWH7W6fISF457hBAZRynlT9MVEuAqvbN6f7ZJMgvx9i9Wb8iGeAkUK28OrL5wRFWaHy48gz4o4BCAqTHnFQN8tFph"
+        key = os.environ["TOKEN"]
         # Key to check with
         check_key = request.args.get("key") # Gets the key from user
         if(check_key == key):   # If the key matches proceed
