@@ -13,9 +13,10 @@ class work(Resource):
     def get(self):
         key = os.environ["TOKEN"]
         print(key)
-        sys.exit()
         # Key to check with
         check_key = request.args.get("key") # Gets the key from user
+        print(check_key)
+        sys.exit()
         if(check_key == key):   # If the key matches proceed
             val = request.args.get("val")   # Check if the val
             if(val == "True"):
