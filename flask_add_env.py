@@ -7,7 +7,7 @@ app = Flask(__name__)
 def get_environ():
     data = request.get_json()
     print(data["token"])
-    os.environ["TOKEN"] = str(data["token"]
+    os.environ["TOKEN"] = str(data["token"])
     return "environment set",200
 
 
