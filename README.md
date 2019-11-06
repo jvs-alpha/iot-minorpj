@@ -29,12 +29,8 @@
 * register 3000
 * flask_auth 3001
 * flask_search 3002
-* flask_node_read 3003
-* flask_add_env 3004
+* flask-mark3 5000
 
-## TERMS TO USE
-* Real time flow
-* Batch flow (it is stored data)
 
 ## IOT DEVICE FUCTIONALITY
 * Device registration
@@ -43,3 +39,8 @@
 * Device provisioning
 * Device monitoring and diagnostics
 * Device troubleshooting
+
+## NOTE
+The programs which are writen are really not used in the realworld but to know that we can build anything with any programming language
+so pls dont blast me telling i am doing everyting wrong and this is not how it should work. This is actually a minor project assignment for my college
+so i didn't make it proper due to time constraints. I can say it works like i have programmed it to work nothing more than that
